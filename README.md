@@ -152,4 +152,5 @@ Saída de ?- demo.
   
 Autor(es);
 
- Braian e Tais
+ Braian e Kael
+ 

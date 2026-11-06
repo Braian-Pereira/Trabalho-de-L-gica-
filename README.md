@@ -1,7 +1,11 @@
 Sistema de Indicação de Animais para Adoção (Prolog)
+
 Projeto avaliativo da disciplina Lógica para Ciências da Computação.
+
 Descrição
+
 O sistema recomenda animais disponíveis para adoção de acordo com o perfil do interessado (espaço disponível, tempo livre, experiência, crianças, alergia e outros animais em casa) e as características do animal (porte, energia, idade, saúde e convivência).
+
 A recomendação é feita por regras lógicas: um animal só é indicado se todas as condições de compatibilidade forem verdadeiras. Também é possível pedir a explicação de por que um animal não foi indicado.
 Como executar
 Requer SWI-Prolog.

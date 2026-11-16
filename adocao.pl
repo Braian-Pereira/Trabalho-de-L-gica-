@@ -1,5 +1,5 @@
 %% Trabalho de Prolog - Adocao de Animais
-%5 Dupla : Braian e Kael
+%% Dupla : Braian e Kael
 %%Contexto entendido pela equipe: dado o perfil de um interessado em adotar um animal, o sistema deve indicar quais animais são adequados para ele, considerando critérios como porte, energia, compatibilidade com crianças. 
 %%Esse trabalho analisa o perfil do interessado e as características do animal com os seguintes parâmetros em destaque:
 %%Moradia (define o porte)
@@ -10,7 +10,7 @@
 %%Tempo de vida do animal
 %%Sexo (macho ou fêmea)
 %%Castração (castrado ou não)
-%%emperamento (nível de energia/agitação)
+%%Temperamento (nível de energia/agitação)
 %============================================================================================================================================================================================================================================
 
 %% 1. Dados dos interessados : 
@@ -137,3 +137,29 @@ custo(agata, baixo).
 custo(zeus, alto).
 custo(toto, medio).
 custo(foguinho, medio).
+
+% vacinado(animal): indica que o animal esta com as vacinas em dia.
+
+vacinado(ronaldo).
+vacinado(carlos).
+vacinado(sofia).
+vacinado(zeus).
+vacinado(toto).
+vacinado(foguinho).
+
+% castrado(animal): indica que o animal e castrado.
+
+castrado(ronaldo).
+castrado(sofia).
+castrado(agata).
+castrado(zeus).
+castrado(toto).
+
+% convive_com_criancas(animal): indica que o animal e compativel com criancas.
+
+convive_com_criancas(carlos).
+convive_com_criancas(bolinha).
+convive_com_criancas(sofia).
+convive_com_criancas(agata).
+convive_com_criancas(toto).
+convive_com_criancas(foguinho).

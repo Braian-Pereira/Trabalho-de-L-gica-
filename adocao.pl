@@ -163,3 +163,22 @@ convive_com_criancas(sofia).
 convive_com_criancas(agata).
 convive_com_criancas(toto).
 convive_com_criancas(foguinho).
+
+%% 3. Regras de compatibilidade
+
+compat_especie(P, A) :- preferencia(P, E), especie(A, E).
+
+compat_porte(P, A) :- espaco(P, pequeno), porte(A, pequeno).
+compat_porte(P, A) :- espaco(P, medio), (porte(A, pequeno) ; porte(A, medio)).
+compat_porte(P, _) :- espaco(P, grande).
+
+compat_custo(P, A) :- orcamento(P, pouco), custo(A, baixo).
+compat_custo(P, A) :- orcamento(P, medio), (custo(A, baixo) ; custo(A, medio)).
+compat_custo(P, _) :- orcamento(P, muito).
+
+compat_energia(P, A) :- temperamento(A, alta), tempo_livre(P, muito).
+compat_energia(P, A) :- temperamento(A, media), \+ tempo_livre(P, pouco).
+compat_energia(_, A) :- temperamento(A, baixa).
+
+compat_criancas(P, A) :- tem_criancas(P), convive_com_criancas(A).
+compat_criancas(P, _) :- \+ tem_criancas(P).

@@ -192,3 +192,8 @@ adequado(P, A) :-
     compat_custo(P, A),
     compat_energia(P, A),
     compat_criancas(P, A).
+
+    %% 5. Consultas de exemplo
+% ?- adequado(braian, A).
+% ?- adequado(kael, A).
+% ?- findall(A, adequado(caio, A), Lista).

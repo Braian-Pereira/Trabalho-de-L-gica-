@@ -1,19 +1,19 @@
-%% Trabalho de Prolog - Adocao de Animais
-%% Dupla : Braian e Kael
-%%Contexto entendido pela equipe: dado o perfil de um interessado em adotar um animal, o sistema deve indicar quais animais são adequados para ele, considerando critérios como porte, energia, compatibilidade com crianças. 
-%%Esse trabalho analisa o perfil do interessado e as características do animal com os seguintes parâmetros em destaque:
-%%Moradia (define o porte)
-%%Custo (capacidade financeira para vacinas e cuidados)
-%%Espécie
-%%Saúde (se é vacinado)
-%%Convivência Familiar (compatibilidade com crianças)
-%%Tempo de vida do animal
-%%Sexo (macho ou fêmea)
-%%Castração (castrado ou não)
-%%Temperamento (nível de energia/agitação)
+% Trabalho de Prolog - Adocao de Animais
+% Dupla : Braian e Kael
+% Contexto entendido pela equipe: dado o perfil de um interessado em adotar um animal, o sistema deve indicar quais animais são adequados para ele, considerando critérios como porte, energia, compatibilidade com crianças. 
+% Esse trabalho analisa o perfil do interessado e as características do animal com os seguintes parâmetros em destaque:
+% Moradia (define o porte)
+% Custo (capacidade financeira para vacinas e cuidados)
+% Espécie
+% Saúde (se é vacinado)
+% Convivência Familiar (compatibilidade com crianças)
+% Tempo de vida do animal
+% Sexo (macho ou fêmea)
+% Castração (castrado ou não)
+% Temperamento (nível de energia/agitação)
 %============================================================================================================================================================================================================================================
 
-%% 1. Dados dos interessados : 
+% 1. Dados dos interessados : 
 
 %---------- INTERESSADOS ----------
 
@@ -70,7 +70,7 @@ preferencia(felipe, coelho).
 preferencia(kael,gato).
 
 
-%% 2. Dados dos animais :
+% 2. Dados dos animais :
 %---------- ANIMAIS ----------
 
 especie(ronaldo, cachorro).
@@ -164,7 +164,7 @@ convive_com_criancas(agata).
 convive_com_criancas(toto).
 convive_com_criancas(foguinho).
 
-%% 3. Regras de compatibilidade
+% 3. Regras de compatibilidade
 
 compat_especie(P, A) :- preferencia(P, E), especie(A, E).
 
@@ -183,7 +183,7 @@ compat_energia(_, A) :- temperamento(A, baixa).
 compat_criancas(P, A) :- tem_criancas(P), convive_com_criancas(A).
 compat_criancas(P, _) :- \+ tem_criancas(P).
 
-%% 4. Regra principal
+% 4. Regra principal
 
 adequado(P, A) :-
     interessado(P),
@@ -193,7 +193,8 @@ adequado(P, A) :-
     compat_energia(P, A),
     compat_criancas(P, A).
 
-    %% 5. Consultas de exemplo
+    % 5. Consultas de exemplo
 % ?- adequado(braian, A).
 % ?- adequado(kael, A).
 % ?- findall(A, adequado(caio, A), Lista).
+

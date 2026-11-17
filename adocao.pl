@@ -182,3 +182,13 @@ compat_energia(_, A) :- temperamento(A, baixa).
 
 compat_criancas(P, A) :- tem_criancas(P), convive_com_criancas(A).
 compat_criancas(P, _) :- \+ tem_criancas(P).
+
+%% 4. Regra principal
+
+adequado(P, A) :-
+    interessado(P),
+    compat_especie(P, A),
+    compat_porte(P, A),
+    compat_custo(P, A),
+    compat_energia(P, A),
+    compat_criancas(P, A).
